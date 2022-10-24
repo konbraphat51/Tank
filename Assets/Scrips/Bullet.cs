@@ -29,5 +29,13 @@ public class Bullet : MonoBehaviour
                 = Vector2.Reflect(velocity, collision.contacts[0].normal);
             velocity = velocityNext;
         }
+
+        if(collision.gameObject.tag == "Player")
+        {
+            Tank colliderTank = collision.gameObject.GetComponent<Tank>();
+            colliderTank.Explode();
+
+            Destroy(this.gameObject);
+        }
     }
 }
