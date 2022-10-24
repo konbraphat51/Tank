@@ -710,6 +710,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 648166934}
     m_Modifications:
+    - target: {fileID: 476615928495709, guid: df90b48509bfe27428efd089f0168422, type: 3}
+      propertyPath: keyConfig
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 476615928495709, guid: df90b48509bfe27428efd089f0168422, type: 3}
+      propertyPath: bulletParent
+      value: 
+      objectReference: {fileID: 648166930}
     - target: {fileID: 1038499200332739839, guid: df90b48509bfe27428efd089f0168422, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -964,6 +972,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 648166934}
     m_Modifications:
+    - target: {fileID: 476615928495709, guid: df90b48509bfe27428efd089f0168422, type: 3}
+      propertyPath: bulletParent
+      value: 
+      objectReference: {fileID: 648166930}
     - target: {fileID: 1038499201413053016, guid: df90b48509bfe27428efd089f0168422, type: 3}
       propertyPath: m_Name
       value: PlayerTankA
@@ -1012,5 +1024,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2875320142577676213, guid: df90b48509bfe27428efd089f0168422, type: 3}
+      propertyPath: bulletParent
+      value: 
+      objectReference: {fileID: 648166930}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df90b48509bfe27428efd089f0168422, type: 3}
