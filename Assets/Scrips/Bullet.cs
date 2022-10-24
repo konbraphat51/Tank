@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public int shooterN;
+
     //control velocity because of reflection behavior
     public Vector2 velocity;
 
@@ -33,6 +35,13 @@ public class Bullet : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Tank colliderTank = collision.gameObject.GetComponent<Tank>();
+            
+            //avoid self-destruct
+            if ((colliderTank.number == shooterN) && (reflectionCurrent == 0))
+            {
+                return;
+            }
+            
             colliderTank.Explode();
 
             Destroy(this.gameObject);

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Tank : MonoBehaviour
 {
     [Tooltip("start from 0")]
-    [SerializeField] private int number = 0;
+    [SerializeField] public int number = 0;
     
     [SerializeField] private GameObject explosionPrefab;
 

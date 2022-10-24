@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
     {
         if (shootedDelta >= shootIntervalS)
         {
-            cannon.Shoot(bulletParent);
+            cannon.Shoot(bulletParent, GetComponent<Tank>().number);
             shootedDelta = 0f;
         }
     }
