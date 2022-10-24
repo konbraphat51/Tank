@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManagerPvP : MonoBehaviour
 {
     [SerializeField] private string eventDestroyed = "PlayerDestroyed";
     [SerializeField] private string eventDestroyedEffectEnd = "DestroyedEffectEnd";
+
+    [SerializeField] private string eventRetry = "Retry";
+
+    [SerializeField] private GameObject gameSetPanel;
 
     [SerializeField] private int playerN = 2;
     private List<int> playersLeft;
@@ -20,6 +25,7 @@ public class GameManagerPvP : MonoBehaviour
 
         EventManager.StartListening(eventDestroyed, GetDestroyed);
         EventManager.StartListening(eventDestroyedEffectEnd, CheckGameSet);
+        EventManager.StartListening(eventRetry, Reset);
     }
 
     private void GetDestroyed(string destroyed)
@@ -32,6 +38,12 @@ public class GameManagerPvP : MonoBehaviour
         if (playersLeft.Count == 1)
         {
             //playersLeft[0] won
+            gameSetPanel.SetActive(true);
         }
+    }
+
+    private void Reset(string str)
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
