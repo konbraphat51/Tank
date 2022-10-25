@@ -8,9 +8,9 @@ public class GameManagerPvP : MonoBehaviour
     [SerializeField] private string eventDestroyed = "PlayerDestroyed";
     [SerializeField] private string eventDestroyedEffectEnd = "DestroyedEffectEnd";
 
-    [SerializeField] private string eventRetry = "Retry";
+    [SerializeField] private string eventSequenceGameSet = "SequenceGameSet";
 
-    [SerializeField] private GameObject gameSetPanel;
+    [SerializeField] private string eventRetry = "Retry";
 
     [SerializeField] private int playerN = 2;
     private List<int> playersLeft;
@@ -37,8 +37,17 @@ public class GameManagerPvP : MonoBehaviour
     {
         if (playersLeft.Count == 1)
         {
-            //playersLeft[0] won
-            gameSetPanel.SetActive(true);
+            string winner;
+            if(playersLeft[0] == 0)
+            {
+                winner = "Blue";
+            }
+            else
+            {
+                winner = "Red";
+            }
+
+            EventManager.TriggerEvent(eventSequenceGameSet, winner);
         }
     }
 

@@ -250,9 +250,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyConfig: 1
-  forwardSpeed: 0.01
-  backSpeed: 0.005
-  turnSpeed: 0.3
+  forwardSpeed: 0.05
+  backSpeed: 0.025
+  turnSpeed: 0.9
   turnCannonSpeed: 1
   shootIntervalS: 1
   cannonObject: {fileID: 1038499200332739837}
