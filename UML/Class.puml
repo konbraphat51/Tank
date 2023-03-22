@@ -1,0 +1,71 @@
+@startuml
+
+package Objects{
+    class Bullet{
+        -reflectionMax : int
+        +OnCollistionEnter2D() : void
+    }
+
+    class Tank{
+        -number : int
+        -explosionPrefab : GameObject
+        +Explode() : void
+    }
+
+    class Explosion{
+        +OnExplosionHalf() : void
+        +OnExplosionEnd() : void
+    }
+
+    class Cannon{
+        +Shoot(): void
+    }
+
+
+
+    class PlayerController{
+        -GetKeys() : void
+        -Move() : void
+        -TurnCannon() : void
+        -Shoot() : void
+    }
+}
+
+package Managers{
+    class EventManager{
+        +TriggerEvent() : void
+        +StartListening() : void
+        +StopListening() : void
+    }
+
+    class GameManager{
+        -CheckGameSet() : void
+    }
+
+    class UIManager{
+        -OnGameSet() : void
+    }
+}
+
+package UIs{
+    class RetryButton{
+        +OnClick() : void
+    }
+}
+
+Cannon --> Bullet
+PlayerController *- Cannon
+
+Bullet --> Tank
+
+Explosion --> EventManager
+
+GameManager --> EventManager
+
+RetryButton --> EventManager
+
+Tank --> EventManager
+
+UIManager --> EventManager
+
+@enduml
