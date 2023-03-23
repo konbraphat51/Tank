@@ -10,6 +10,7 @@ package Objects{
         -number : int
         -explosionPrefab : GameObject
         +Explode() : void
+        +Move() : void
     }
 
     class Explosion{
@@ -19,15 +20,11 @@ package Objects{
 
     class Cannon{
         +Shoot(): void
+        +Turn() : void
     }
-
-
 
     class PlayerController{
         -GetKeys() : void
-        -Move() : void
-        -TurnCannon() : void
-        -Shoot() : void
     }
 }
 
@@ -53,8 +50,11 @@ package UIs{
     }
 }
 
+PlayerController -> Tank
+
+Tank *- Cannon
+
 Cannon --> Bullet
-PlayerController *- Cannon
 
 Bullet --> Tank
 
