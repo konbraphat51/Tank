@@ -1,0 +1,35 @@
+@startuml
+
+participant Bullet
+participant Tank
+entity GameManager
+entity UIManager
+
+Bullet -> Tank : Hit
+
+create participant Explosion
+Tank -> Explosion : Generate
+
+Tank -> GameManager : Tell destroyed
+
+destroy Tank
+
+hnote over Explosion
+    Time passed
+endhnote
+
+Explosion -> GameManager : Ev-ExplosionTimePassed
+
+alt if Only one tank left
+    hnote over GameManager
+        Game Set!
+    endhnote
+
+    GameManager -> UIManager : Ev-GameSet
+
+    hnote over UIManager
+        Show Game set UI
+    endhnote
+end
+
+@enduml

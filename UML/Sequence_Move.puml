@@ -1,0 +1,22 @@
+@startuml
+
+actor User
+boundary PlayerController
+participant Tank
+participant Cannon
+participant Bullet
+
+User -> PlayerController : Key Input
+
+PlayerController -> Tank : Command Movement
+
+opt turning cannnon
+    Tank -> Cannon : Command Turn
+end
+
+opt shooting
+    Tank -> Cannon : Command Shoot
+    Cannon -> Bullet : Generate + Initialize
+end
+
+@enduml

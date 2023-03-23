@@ -3,7 +3,8 @@
 package Objects{
     class Bullet{
         -reflectionMax : int
-        +OnCollistionEnter2D() : void
+        +OnCollisionEnter2D() : void
+        -Move() : void
     }
 
     class Tank{
@@ -11,6 +12,7 @@ package Objects{
         -explosionPrefab : GameObject
         +Explode() : void
         +Move() : void
+        +OnCollisionEnter2D() : void
     }
 
     class Explosion{
@@ -55,8 +57,6 @@ PlayerController -> Tank
 Tank *- Cannon
 
 Cannon --> Bullet
-
-Bullet --> Tank
 
 Explosion --> EventManager
 
