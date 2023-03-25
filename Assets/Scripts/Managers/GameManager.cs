@@ -80,7 +80,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         UIManager.instance.OnGameSet(names[winner]);
     }
 
-    private bool CheckGameSet()
+    protected virtual bool CheckGameSet()
     {
         if (playersLeft.Count == 1)
         {
