@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    [Tooltip("When start CheckGameSet")]
-    [SerializeField] private string eventExplosionHalf = "ExplosionHalf";
+    public int tankID { get; private set; }
 
-    public void OnExplosionHalf()
+    public void Initialize(int id)
     {
-        EventManager.TriggerEvent(eventExplosionHalf, "");
+        tankID = id;
     }
 
     public void OnExplosionEnd()

@@ -98,9 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9908b22dd4a4e4ab33f4224f80f7e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipObject: {fileID: 1931353668099546623}
+  turnSpeed: 100
+  cannonCenterObject: {fileID: 4492392555642688743}
+  tipObject: {fileID: 8266146490153065213}
   bulletPrefab: {fileID: 4710144002666516274, guid: 1dd4ff1bb0e0a7c4d88d416d689b27c5, type: 3}
-  bulletSpeed: 6
+  shootInterval: 1
 --- !u!1 &1038499201413053016
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,14 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyConfig: 1
-  forwardSpeed: 0.05
-  backSpeed: 0.025
-  turnSpeed: 0.9
-  turnCannonSpeed: 1
-  shootIntervalS: 1
-  cannonObject: {fileID: 1038499200332739837}
-  cannonCenterObject: {fileID: 6780564588453419859}
-  bulletParent: {fileID: 0}
+  tank: {fileID: 2071342524196264548}
 --- !u!114 &2071342524196264548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,9 +265,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be989c7d6ed18a94ba30e09a11af0664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 0
+  name: 
   explosionPrefab: {fileID: 7923157644070786027, guid: 9df24627519924e478f289e121804abf, type: 3}
-  eventDestroyed: PlayerDestroyed
+  cannon: {fileID: 2875320142577676213}
+  forwardSpeed: 3
+  backSpeed: 1
+  turnSpeed: 100
 --- !u!1 &1931353668099546623
 GameObject:
   m_ObjectHideFlags: 0

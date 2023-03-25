@@ -28,15 +28,13 @@ package Objects{
     class PlayerController{
         -GetKeys() : void
     }
+
+    interface CollidableObject{
+        +whose : int
+    }
 }
 
 package Managers{
-    class EventManager{
-        +TriggerEvent() : void
-        +StartListening() : void
-        +StopListening() : void
-    }
-
     class GameManager{
         -CheckGameSet() : void
     }
@@ -58,14 +56,16 @@ Tank *- Cannon
 
 Cannon --> Bullet
 
-Explosion --> EventManager
+Tank *-- Explosion
 
-GameManager --> EventManager
+Tank -|> CollidableObject
+Bullet -|> CollidableObject
 
-RetryButton --> EventManager
+Tank --> GameManager
+Cannon --> GameManager
 
-Tank --> EventManager
+GameManager --> UIManager
 
-UIManager --> EventManager
+RetryButton --> GameManager
 
 @enduml
